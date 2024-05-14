@@ -1,0 +1,298 @@
+body {
+    background-color: #F2F9FE;
+}
+
+#container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    position: fixed;
+    top: 1%;
+    left: 0;
+    right: 0;
+    padding: 0px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+}
+
+header nav ul li {
+    padding: 0 20px;
+    position: relative;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #677389;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+header nav ul li a.active {
+    color: #223444;
+}
+
+.navigation {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .navigation ul li:hover>ul {
+    display: initial;
+}
+
+.icon-menu {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+}
+
+
+
+.sun-icon-fill {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.moon-icon-fill {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.switch {
+    background: #223344;
+    display: flex;
+    border-radius: 15px;
+    padding: 3px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.switch img {
+    width: 20px;
+}
+
+.contenido {
+    display: flex;
+    margin-top: 80px;
+}
+
+.contenedor-izquierdo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0px 5%;
+}
+
+.contenedor-chulos {
+    display: flex;
+}
+
+.texto-chulo {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 14px;
+    color: #909193;
+    margin-left: 10px;
+}
+
+.contenedorUno {
+    display: flex;
+    margin-right: 20px;
+}
+
+.contenedorDos {
+    display: flex;
+}
+
+.contenedor-derecho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.contenedor-derecho img {
+    width: 80%;
+}
+
+.subtitle-1 {
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: #111729;
+    margin: 15px 0;
+}
+
+.title {
+    font-family: 'Poppins';
+    font-size: 60px;
+    color: #223344;
+    margin: 0;
+}
+
+.descripcion {
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 400;
+    color: #909193;
+}
+
+.button {
+    background-color: #2A4DD0;
+    padding: 15px 25px;
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+.button2 {
+    padding: 15px 25px;
+    color: #2A4DD0;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+.contenedor-botones {
+    margin: 25px 0;
+}
+
+.abrir-menu-lateral {
+    display: none;
+}
+
+.navigation .cerrar-menu-lateral {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .contenido {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 640px) {
+    .icon-menu {
+        display: block;
+    }
+
+    .abrir-menu-lateral {
+        display: block;
+        width: 20px;
+        fill: #111729;
+        cursor: pointer;
+    }
+
+    body.dark-mode .abrir-menu-lateral {
+        fill: #ffffff;
+    }
+
+    /* Navigation */
+    .navigation {
+        display: block;
+        position: fixed;
+        background-color: #ffffff;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 380px;
+        transform: translateX(380px);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    body.dark-mode .navigation {
+        background-color: #172243;
+    }
+
+    .navigation.open {
+        transform: translateX(0px);
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .navigation ul li {
+        text-align: center;
+        padding: 10px 0px;
+    }
+
+    .navigation ul li a {
+        font-size: 45px;
+    }
+
+    .navigation .cerrar-menu-lateral {
+        display: flex;
+        padding-top: 20px;
+        padding-right: 32px;
+        justify-content: flex-end;
+    }
+
+    .navigation .cerrar-menu-lateral svg {
+        width: 20px;
+        cursor: pointer;
+        fill: #111729;
+    }
+
+    body.dark-mode .navigation .cerrar-menu-lateral svg {
+        fill: #ffffff;
+    }
+
+    .switch-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+/* DARK MODE */
+
+body.dark-mode {
+    background-color: #111729;
+    transition: all 0.3s ease;
+}
+
+.dark-mode h1,
+.dark-mode h5,
+.dark-mode ul li a.active {
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* SWITCH */
+
+.moon-icon-fill,
+.sun-icon {
+    display: none;
+}
+
+.dark-mode .moon-icon,
+.dark-mode .sun-icon-fill {
+    display: none;
+}
+
+.dark-mode .moon-icon-fill,
+.dark-mode .sun-icon {
+    display: inline;
+}
